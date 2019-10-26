@@ -15,7 +15,7 @@
 # [START gae_python37_render_template]
 import datetime
 
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
 
@@ -29,7 +29,8 @@ def root():
                    datetime.datetime(2018, 1, 3, 11, 0, 0),
                    ]
 
-    return render_template('index.html', times=dummy_times)
+    return jsonify(dummy_times)
+#    return render_template('index.html', times=dummy_times)
 
 
 if __name__ == '__main__':
