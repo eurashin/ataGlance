@@ -1,13 +1,87 @@
-#imageContainer {
-    /* scroll-snap-type: x mandatory;
-    overflow-x: scroll;
-    display: flex; */
-    background-image: url("images/trump1.jpeg");
+.container {
+   width: 100%;
+   height: 60vh;
+   transition: all 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+
+#myCanvas {
+    position:absolute; 
+    top:0; 
+    right:0;
+}
+
+
+label {
+    width:210px; 
+    height:210px; 
+    margin-left:10%;
+    margin-top:40%; 
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: block;
+    cursor: pointer;
+
+    font-size:12px; 
+    padding:10px; 
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+    z-index: 20;
+
+    position: relative;
+}
+
+
+.card div {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #FFF;
+        text-align: center;
+        line-height: 200px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 2px;
+        background-repeat:no-repeat;
+        background-position: center;
+        background-size: cover;
 
 }
 
-#imageContainer img {
-   /*scroll-snap-align: center;*/
-   width: 100%;
-   height: 100%;
+
+   .card .back {
+        background: #222;
+        color: #FFF;
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+    }
+
+label:hover .card {
+    -webkit-transform: rotateX(20deg);
+    transform: rotateX(20deg);
+    box-shadow: 0 20px 20px rgba(50,50,50,.2);
+}
+
+input {
+    display: none;
+}
+
+:checked + .card {
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+}
+
+label:hover :checked + .card {
+    transform: rotateX(160deg);
+    -webkit-transform: rotateX(160deg);
+    box-shadow: 0 20px 20px rgba(255,255,255,.2);
 }

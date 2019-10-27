@@ -24,7 +24,7 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E3E3E3;
+    background-color:white;
     font-family: paralucent-text,sans-serif;
 	font-weight: 400;
 	font-style: normal;
@@ -70,14 +70,15 @@ h1 {
     overflow:visible;
     padding-top:30px;
     text-align:center;
-	
-	
+    text-transform: uppercase; 	
 }
+
 .topics{
 	width: 100%;
 	position: fixed;
 	top:100px;
 }
+
 td{
   	padding: 12px;
  	text-align: left;
@@ -92,28 +93,107 @@ td{
 	font-size: 21px;
 	margin: 0px;
 	float: left;
+    height:50px;
 }
 p{
-	display: inline;
+	display: inline-block;
 	float: right;
-	position: fixed;
-	right: 12px;
-	top: 	
+	margin-right: 12px;
 }
 .navbar{
 	height: 45px;
-	background: #CCCCCC;
+	background: white;
 	display: flex;
 	justify-content: space-between;
 	position: fixed;
 	bottom: 0px;
 	width: 100%;
-	color: #1A1A1A;
+    border: 1px solid grey; 
 }
+
+.active {
+    background:lightgrey;
+}
+
+
+.topicName {
+   width:65.4%;
+   margin:0;   
+   float:left; 
+}
+
+.editTopicIcon {
+    float:left;
+    width:22.5%;
+    margin:0;
+}
+
 i{
-	margin-left: 50px;
-	margin-right: 50px;
-	margin-top: 20px;
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-top: 15px;
+    color: black; 
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom:20px;
+}
+#add{
+	position: fixed;
+	bottom: 70px;
+	left:35%;
+}
+.login{
+	padding: 50px;
+	margin-left: 30%;
+	margin: 15%;
+}
+.button{
+	position:fixed;
+	margin: 20px;
+	left:50%;
+}
+input{
+	height: 40px;
+	width: 200px;
+	color: #1a1a1a;
+	font-size: 20px;
+	margin: 5px;
+}
+a:link{
+	color:#1a1a1a;
+	text-decoration: none;
+}
+a:visited{
+	color: #00004F;
+}
+a:active{
+	color:#00004F;
+}
+
+button {
+  height:40px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  font-family: "paralucent-text", sans-serif;
+  font-size:15px;
+	position: fixed;
+	left: 40%;
+}
+.submit{
+	background: lightgrey;
+	width: 120px;
+	height: 50px;
+	position:fixed;
+	top: 200px;
+	left:35%;
+}
+
+#topicInput{
+	width:90%;
+    margin-left:5%;
+    height:40px;
 }
 /*.event {
     border-radius:4px;
