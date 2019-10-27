@@ -1,5 +1,7 @@
 
 
+CREATE DATABASE Glance;
+
 CREATE TABLE User
 (
 
