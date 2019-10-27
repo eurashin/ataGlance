@@ -1,10 +1,44 @@
-#imageContainer {
-    scroll-snap-type: x mandatory;
-    overflow-x: scroll;
-    display: flex;
-
+a.icon{
+  text-decoration:none;
+  color:#f00;
 }
 
-#imageContainer img {
-   scroll-snap-align: center;
+.fa-user:after {
+    content: "\f007";
+  display: block;
+}
+
+.fa-user:before {
+    position: absolute;
+}
+
+.icon:hover:before{
+    -webkit-animation: pulse 2s ease-in;
+    -moz-animation: pulse 2s ease-in;
+     animation: pulse 2s ease-in;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;    
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    opacity: 0.0;
+ }
+ 25% {
+    -webkit-transform: scale(1.35);
+    opacity: 0.1;
+ }
+ 50% {
+    -webkit-transform: scale(1.7);
+    opacity: 0.3;
+ }
+ 75% {
+    -webkit-transform: scale(2.05);
+    opacity: 0.5;
+ }
+ 100% {
+    -webkit-transform: scale(2.4);
+    opacity: 0.0;
+ }
 }

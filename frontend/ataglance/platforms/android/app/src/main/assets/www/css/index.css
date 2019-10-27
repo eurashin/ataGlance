@@ -183,31 +183,30 @@ button {
 }
 .submit{
 	background: lightgrey;
-	width: 120px;
-	height: 50px;
-	position:fixed;
-	top: 200px;
-	left:35%;
+	width: 200px;
+	height: 40px;
+	position:relative;
+	left:5%;
+	margin: 10px;
 }
 .done{
 	background: lightgrey;
-	width: 120px;
-	height: 50px;
-	position:fixed;
-	top: 250px;
-	left:35%;
+	width: 200px;
+	height: 40px;
+	position:relative;
+	left:5%;
+	margin:10px;
 }
 .logo{
 	height: 100px;
 	position: fixed;
-	top: 400px;
+	top: 450px;
 	left:25%
 }
 #topicInput{
-	position: fixed;
-	top: 130px;
-	left: 24%;
-	width:200px;
+	width:90%;
+    margin-left:5%;
+    height:40px;
 }
 /*.event {
     border-radius:4px;

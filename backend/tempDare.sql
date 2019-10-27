@@ -53,8 +53,8 @@ DROP TABLE IF EXISTS Picture;
 CREATE TABLE Picture
 (
 
-    url         VARCHAR(2041),
-    citation    VARCHAR(2041),
+    url         VARCHAR(1000),
+    citation    VARCHAR(1000),
     PRIMARY KEY (url)
 );
 
@@ -64,8 +64,8 @@ CREATE TABLE Text
 
     storyID      VARCHAR(20),           -- id story it goes  to 
     dateCreated    DATE, 
-    info            VARCHAR(2041),
-    picID           VARCHAR(2041),
+    info            VARCHAR(1000),
+    picID           VARCHAR(1000),
     FOREIGN KEY(storyID) REFERENCES Story(sID),
     FOREIGN KEY(picID) REFERENCES Picture(url) ,               -- the day the story started  
     PRIMARY KEY (info)
