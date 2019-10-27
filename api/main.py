@@ -16,6 +16,7 @@
 import datetime
 from flask import Flask, render_template, jsonify
 import search
+import json 
 
 app = Flask(__name__)
 
@@ -33,17 +34,25 @@ def root():
 
     return jsonify(dummy_times)
 
-@app.route('/')
-def root():
-    # For the sake of example, use static information to inflate the template.
-    # This will be replaced with real information in later steps.
-    dummy_times = [datetime.datetime(2018, 1, 1, 10, 0, 0),
-                   datetime.datetime(2018, 1, 2, 10, 30, 0),
-                   datetime.datetime(2018, 1, 3, 11, 0, 0),
-                   ]
+@app.route('/getnews', methods=['POST'])
+def getNews():
+    urls = []
+    if request.method == "POST":
+        details = request.form
+        tags = request['tags']
+        date = request['date']
 
-    return jsonify(dummy_times)
-#    return render_template('index.html', times=dummy_times)
+        urls = search.searchImages(tags, date)
+
+
+    response = app.response_class(
+            response=json.dumps(('urls': urls)),
+            status=200,
+            mimetype='application/json'
+    )
+    return(response)
+        
+
 
 
 if __name__ == '__main__':

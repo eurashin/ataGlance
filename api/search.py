@@ -19,18 +19,16 @@ def searchImagesBlank(tags, startDate):
     # Remove rows with no image
     articles = articles[articles['urlToImage'] != "https://s4.reutersmedia.net/resources_v2/images/rcom-default.png"]
     dates = dateHistogram(articles)
-    
+   
+    urls = []
     for date in dates: 
         images = articlesAtDate(articles, date)[['urlToImage']]
         index = random.randint(0, len(images) - 1)
-        print(images.shape)
-        print(index)
         randomImageUrl = images.iloc[index][0]
-        print(randomImageUrl)
-        response = requests.get(randomImageUrl)
-        img = Image.open(BytesIO(response.content))
-        img.show()
-        
+       
+        urls.append(randomImageUrl)
+    return urls
+
 
 def searchImages(tags, startDate): 
     articles = requestSources(tags, startDate)
@@ -39,13 +37,10 @@ def searchImages(tags, startDate):
     for date in dates: 
         images = articlesAtDate(articles, date)[['urlToImage']]
         index = random.randint(0, len(images) - 1)
-        print(images.shape)
-        print(index)
         randomImageUrl = images.iloc[index][0]
-        print(randomImageUrl)
-        response = requests.get(randomImageUrl)
-        img = Image.open(BytesIO(response.content))
-        img.show()
+        urls.append(randomImageUrl)
+
+    return urls
         
    
 # Finds the dates for which the number of news articles published
@@ -108,4 +103,3 @@ def requestSources(tags, startDate):
     df['publishedAt'] = df['publishedAt'].astype("datetime64")
     return(df)
 
-searchImagesBlank(['election', 'democrat'], '2019-10-01')
