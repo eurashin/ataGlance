@@ -16,6 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+@font-face {
+  font-family:'Paralucent';
+  src: url("Paralucent.ttf") format("truetype");
+}
+
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
@@ -26,7 +31,7 @@ body {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#E4E4E4;
     background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-family: system-ui, -apple-system, -apple-system-font, 'Paralucent',  sans-serif;
     font-size:12px;
     height:100vh;
     margin:0px;
