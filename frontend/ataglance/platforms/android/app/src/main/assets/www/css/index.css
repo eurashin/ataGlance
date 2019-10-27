@@ -189,11 +189,11 @@ button {
 	top: 200px;
 	left:35%;
 }
+
 #topicInput{
-	position: fixed;
-	top: 130px;
-	left: 24%;
-	width:200px;
+	width:90%;
+    margin-left:5%;
+    height:40px;
 }
 /*.event {
     border-radius:4px;
