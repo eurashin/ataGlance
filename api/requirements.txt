@@ -1,2 +1,4 @@
 Flask==1.1.1
+google-api-python-client
 newsapi-python==0.2.5
+
