@@ -1,6 +1,9 @@
+var tags;
+
 function onload() {
+    tags = []; 
+
     // Load the autofill data
-    //
     
     $(function() {
       $(".pulse").hover(function() {
@@ -12,6 +15,14 @@ function onload() {
 
 }
 
+
+function addTag() {
+    tags.push()
+}
+
+function clear() {
+
+}
 
 function createSearch() {
 

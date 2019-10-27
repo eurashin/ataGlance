@@ -17,6 +17,8 @@ import datetime
 from flask import Flask, render_template, jsonify, request
 import search
 import json 
+from imageUpload import imageUpload
+import random
 
 app = Flask(__name__)
 
@@ -37,12 +39,15 @@ def root():
 @app.route('/getnews', methods=['POST'])
 def getNews():
     urls = []
+    
     if request.method == "POST":
         details = request.form
         tags = details['tags']
-        date = details['date']
+        date = '2019-09-27'
 
         urls = search.searchImages(tags, date)
+        for url in urls: 
+            imageUpload(url, url, tags) 
 
 
 
@@ -51,6 +56,7 @@ def getNews():
             status=200,
             mimetype='application/json'
     )
+
     return(response)
         
 
