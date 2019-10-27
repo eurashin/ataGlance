@@ -1,8 +1,10 @@
-
-
+DROP DATABASE Glance; 
 CREATE DATABASE Glance;
+ 
+USE Glance; 
 
-CREATE TABLE User
+DROP TABLE IF EXISTS Users;
+CREATE TABLE Users
 (
 
     userID      VARCHAR(7),     -- User id to identify individuals 
@@ -13,18 +15,8 @@ CREATE TABLE User
     PRIMARY KEY (userID)
 );
 
-CREATE TABLE Subscribe
-(
 
-    start      date,     -- start date of users subscription 
-    subName    VARCHAR(20),     -- name storied by person 
-    subTag     VARCHAR(20),     -- story tag id  
-    subID      VARCHAR(7);      -- the id of the user 
-    FOREIGN KEY ( subID) references User(userID)
-    FOREIGN KEY ( subTag) references Story(sID) 
-    PRIMARY KEY (Subname)
-);
-
+DROP TABLE IF EXISTS Tag;
 CREATE TABLE Tag
 (
 
@@ -34,6 +26,7 @@ CREATE TABLE Tag
     PRIMARY KEY (tagID)
 );
 
+DROP TABLE IF EXISTS Story;
 CREATE TABLE Story
 (
 
@@ -42,33 +35,47 @@ CREATE TABLE Story
     PRIMARY KEY (sID)
 );
 
+DROP TABLE IF EXISTS Subscribe;
+CREATE TABLE Subscribe
+(
+
+    start      date,     -- start date of users subscription 
+    subName    VARCHAR(20),     -- name storied by person 
+    subTag     VARCHAR(20),     -- story tag id  
+    subID      VARCHAR(7),      -- the id of the user 
+    FOREIGN KEY ( subID) references Users(userID),
+    FOREIGN KEY ( subTag) references Story(sID),
+    PRIMARY KEY (subName)
+);
+
+
+DROP TABLE IF EXISTS Picture;
+CREATE TABLE Picture
+(
+
+    url         VARCHAR(2041),
+    citation    VARCHAR(2041),
+    PRIMARY KEY (url)
+);
+
+DROP TABLE IF EXISTS Text;
 CREATE TABLE Text
 (
 
     storyID      VARCHAR(20),           -- id story it goes  to 
     dateCreated    DATE, 
-    info            text,
-    picID           VARCHAR(MAX),
-    FOREIGN KEY(storyID) REFERENCES Story(sID) 
-    FOREIGN KEY(picID) REFERENCES Picture(url)                -- the day the story started  
+    info            VARCHAR(2041),
+    picID           VARCHAR(2041),
+    FOREIGN KEY(storyID) REFERENCES Story(sID),
+    FOREIGN KEY(picID) REFERENCES Picture(url) ,               -- the day the story started  
     PRIMARY KEY (info)
 );
 
 
-CREATE TABLE Picture
-(
-
-    url         VARCHAR(max),
-    citation    VARCHAR(max),
- 
-
-    PRIMARY KEY (url)
-);
-
 
 INSERT INTO Tag VALUES ('1', 'climate');
 INSERT INTO Tag VALUES ('2', 'europe');
-INSERT INTO Tag VALUES ('3', 'u.s.');
+INSERT INTO Tag VALUES ('3', 'us');
 INSERT INTO Tag VALUES ('4', 'aisa');
 INSERT INTO Tag VALUES ('5', 'south america');
 INSERT INTO Tag VALUES ('6', 'africa');
@@ -86,9 +93,3 @@ INSERT INTO Tag Values ('17', 'stock market');
 INSERT INTO Tag Values ('18', 'economey');
 INSERT INTO Tag VALUES ('19', 'recession');
 INSERT INTO Tag Values ('20', 'oscar');
-
-
-
-
-
-
