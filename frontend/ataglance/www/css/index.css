@@ -106,8 +106,9 @@ p{
 	display: flex;
 	justify-content: space-between;
 	position: fixed;
-	bottom:0px;
-	width: 100%; 
+	bottom: 0px;
+	width: 100%;
+    border: 1px solid grey; 
 }
 
 .active {
@@ -116,7 +117,11 @@ p{
 
 
 .topicName {
+<<<<<<< HEAD
    width:65.4%;
+=======
+   width:75%;
+>>>>>>> 665b718ce334a65be32e1fbfd7692832cf6021e8
    margin:0;   
    float:left; 
 }
@@ -180,7 +185,6 @@ button {
 	position: fixed;
 	left: 40%;
 }
-
 /*.event {
     border-radius:4px;
     -webkit-border-radius:4px;
