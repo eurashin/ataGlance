@@ -181,6 +181,20 @@ button {
 	position: fixed;
 	left: 40%;
 }
+.submit{
+	background: lightgrey;
+	width: 120px;
+	height: 50px;
+	position:fixed;
+	top: 200px;
+	left:35%;
+}
+#topicInput{
+	position: fixed;
+	top: 130px;
+	left: 24%;
+	width:200px;
+}
 /*.event {
     border-radius:4px;
     -webkit-border-radius:4px;
