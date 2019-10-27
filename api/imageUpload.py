@@ -1,0 +1,8 @@
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+cloudinary.config(cloud_name = "ataglance", api_key= "777356583495598", api_secret = "xqhd7MQmMt_qKaIq4XSN1RSFrts")
+
+def imageUpload(file, publicID):
+    cloudinary.uploader.upload(file, public_id=publicID)
