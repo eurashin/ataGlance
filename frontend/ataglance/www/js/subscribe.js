@@ -2,30 +2,28 @@ var tags;
 
 function onload() {
     tags = []; 
+}
 
-    // Load the autofill data
-    
-    $(function() {
-      $(".pulse").hover(function() {
-        $(this).removeClass("pulse");
-      }, function() {
-        $(this).addClass("pulse");
-      });
+//redirect and make api call
+function search() {
+    var obj = {"tags": tags}
+    $.ajax({
+        url:"https://ataglance.appspot.com/getnews",
+        type: "POST", 
+        dataType: "json", 
+        data:JSON.stringify(obj),
+        success: function(response) {
+            data = JSON.parse(response);
+            dates = data.dates; 
+            descriptions = data.descriptions; 
+            keys = keys;
+        }
     });
-
 }
 
-
-function addTag() {
-    tags.push()
+function addTag(tag) {
+    tags.push(tag)
 }
 
-function clear() {
-
-}
-
-function createSearch() {
-
-}
 
 

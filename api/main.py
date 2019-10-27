@@ -17,16 +17,19 @@ import datetime
 from flask import Flask, render_template, jsonify, request
 import search
 import json 
-from imageUpload import imageUpload
+import imageUpload
 import random
+import datetime
 
 app = Flask(__name__)
+
+def myconverter(o):
+    if isinstance(o, datetime.date):
+        return o.__str__()
 
 
 @app.route('/')
 def root():
-
-
     # For the sake of example, use static information to inflate the template.
     # This will be replaced with real information in later steps.
     dummy_times = [datetime.datetime(2018, 1, 1, 10, 0, 0),
@@ -39,20 +42,25 @@ def root():
 @app.route('/getnews', methods=['POST'])
 def getNews():
     urls = []
-    
+    keys = []
+    dates = []
+    descriptions = []
+
     if request.method == "POST":
         details = request.form
         tags = details['tags']
         date = '2019-09-27'
 
-        urls = search.searchImages(tags, date)
-        for url in urls: 
-            imageUpload(url, url, tags) 
+        urls, descriptions, dates = search.searchImages(tags, date)
+        for url in urls:
+            key = imageUpload.random_generator() 
+            imageUpload.imageUpload(url, key, tags)
+            keys.append(key)
 
 
 
     response = app.response_class(
-            response=json.dumps({'urls': urls}),
+            response=json.dumps({'keys': keys, 'descriptions':descriptions, 'dates':dates}, default=myconverter),
             status=200,
             mimetype='application/json'
     )
