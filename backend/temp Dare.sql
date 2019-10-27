@@ -49,8 +49,8 @@ CREATE TABLE Text
     dateCreated    DATE, 
     info            text,
     picID           VARCHAR(MAX),
-    FOREIGN KEY() REFERENCES Story(sID) 
-    FOREIGN KEY() REFERENCES Picture(url)                -- the day the story started  
+    FOREIGN KEY(storyID) REFERENCES Story(sID) 
+    FOREIGN KEY(picID) REFERENCES Picture(url)                -- the day the story started  
     PRIMARY KEY (info)
 );
 
