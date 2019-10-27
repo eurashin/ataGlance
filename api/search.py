@@ -35,13 +35,18 @@ def searchImages(tags, startDate):
     dates = dateHistogram(articles)
     
     urls = []
-    for date in dates: 
-        images = articlesAtDate(articles, date)[['urlToImage']]
+    descriptions = []
+    for date in dates:
+        arts = articlesAtDate(articles, date)
+        images = arts[['urlToImage']]
+        desc = arts[['title']]
+
         index = random.randint(0, len(images) - 1)
         randomImageUrl = images.iloc[index][0]
+        descriptions.append(desc.iloc[index][0])
         urls.append(randomImageUrl)
 
-    return urls
+    return urls, descriptions, dates
         
    
 # Finds the dates for which the number of news articles published
