@@ -22,7 +22,7 @@ CREATE TABLE Subscribe
     subID      VARCHAR(7);      -- the id of the user 
     FOREIGN KEY ( subID) references User(userID)
     FOREIGN KEY ( subTag) references Story(sID) 
-    PRIMARY KEY (SubName)
+    PRIMARY KEY (Subname)
 );
 
 CREATE TABLE Tag
