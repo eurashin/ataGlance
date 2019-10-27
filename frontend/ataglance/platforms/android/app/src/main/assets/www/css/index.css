@@ -16,11 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-@font-face {
-  font-family:'Paralucent';
-  src: url("Paralucent.ttf") format("truetype");
-}
-
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
@@ -29,9 +24,10 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    font-family: system-ui, -apple-system, -apple-system-font, 'Paralucent',  sans-serif;
+    background-color:white;
+    font-family: paralucent-text,sans-serif;
+	font-weight: 400;
+	font-style: normal;
     font-size:12px;
     height:100vh;
     margin:0px;
@@ -44,7 +40,6 @@ body {
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
     top:50%;
@@ -67,15 +62,140 @@ body {
 }
 
 h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
+	font-family: "paralucent-text", sans-serif;
+	font-weight: 400;
+	font-style:normal;
+    font-size:40px;
+    margin: 0px;
     overflow:visible;
-    padding:0px;
+    padding-top:30px;
     text-align:center;
+    text-transform: uppercase; 	
 }
 
-.event {
+.topics{
+	width: 100%;
+	position: fixed;
+	top:100px;
+}
+
+td{
+  	padding: 12px;
+ 	text-align: left;
+  	background-color: #CCCCCC;
+  	color: #1A1A1A;
+  	border-bottom: 1px solid #1A1A1A;
+	border-top: 1px solid #1A1A1A;
+  	width: 100%;
+	font-family: "paralucent-text", sans-serif;
+	font-weight: 400;
+	font-style:normal;
+	font-size: 21px;
+	margin: 0px;
+	float: left;
+    height:50px;
+}
+p{
+	display: inline-block;
+	float: right;
+	margin-right: 12px;
+}
+.navbar{
+	height: 45px;
+	background: white;
+	display: flex;
+	justify-content: space-between;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+    border: 1px solid grey; 
+}
+
+.active {
+    background:lightgrey;
+}
+
+
+.topicName {
+   width:65.4%;
+   margin:0;   
+   float:left; 
+}
+
+.editTopicIcon {
+    float:left;
+    width:22.5%;
+    margin:0;
+}
+
+i{
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-top: 15px;
+    color: black; 
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom:20px;
+}
+#add{
+	position: fixed;
+	bottom: 70px;
+	left:35%;
+}
+.login{
+	padding: 50px;
+	margin-left: 30%;
+	margin: 15%;
+}
+.button{
+	position:fixed;
+	margin: 20px;
+	left:50%;
+}
+input{
+	height: 40px;
+	width: 200px;
+	color: #1a1a1a;
+	font-size: 20px;
+	margin: 5px;
+}
+a:link{
+	color:#1a1a1a;
+	text-decoration: none;
+}
+a:visited{
+	color: #00004F;
+}
+a:active{
+	color:#00004F;
+}
+
+button {
+  height:40px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  font-family: "paralucent-text", sans-serif;
+  font-size:15px;
+	position: fixed;
+	left: 40%;
+}
+.submit{
+	background: lightgrey;
+	width: 120px;
+	height: 50px;
+	position:fixed;
+	top: 200px;
+	left:35%;
+}
+#topicInput{
+	position: fixed;
+	top: 130px;
+	left: 24%;
+	width:200px;
+}
+/*.event {
     border-radius:4px;
     -webkit-border-radius:4px;
     color:#FFFFFF;
@@ -109,4 +229,4 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
-}
+}*/
