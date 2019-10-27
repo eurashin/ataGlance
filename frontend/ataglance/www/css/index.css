@@ -120,11 +120,15 @@ i{
 }
 .login{
 	padding: 50px;
+	margin-left: 30%;
 	margin: 15%;
 }
 .button{
 	margin: 20px;
 	margin-left:40%;
+}
+input{
+	color: #1a1a1a;
 }
 a:link{
 	color:#1a1a1a;
