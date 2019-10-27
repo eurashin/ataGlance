@@ -14,7 +14,7 @@
 
 # [START gae_python37_render_template]
 import datetime
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 import search
 import json 
 
@@ -39,14 +39,15 @@ def getNews():
     urls = []
     if request.method == "POST":
         details = request.form
-        tags = request['tags']
-        date = request['date']
+        tags = details['tags']
+        date = details['date']
 
         urls = search.searchImages(tags, date)
 
 
+
     response = app.response_class(
-            response=json.dumps(('urls': urls)),
+            response=json.dumps({'urls': urls}),
             status=200,
             mimetype='application/json'
     )

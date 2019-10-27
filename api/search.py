@@ -34,6 +34,7 @@ def searchImages(tags, startDate):
     articles = requestSources(tags, startDate)
     dates = dateHistogram(articles)
     
+    urls = []
     for date in dates: 
         images = articlesAtDate(articles, date)[['urlToImage']]
         index = random.randint(0, len(images) - 1)
