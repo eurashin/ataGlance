@@ -94,11 +94,9 @@ td{
 	float: left;
 }
 p{
-	display: inline;
+	display: inline-block;
 	float: right;
-	position: fixed;
-	right: 12px;
-	top: 	
+	margin-right: 12px;
 }
 .navbar{
 	height: 45px;
@@ -111,9 +109,32 @@ p{
 	color: #1A1A1A;
 }
 i{
-	margin-left: 50px;
-	margin-right: 50px;
+	margin-left: 30px;
+	margin-right: 30px;
 	margin-top: 20px;
+}
+#add{
+	position: fixed;
+	bottom: 70px;
+	left:38%;
+}
+.login{
+	padding: 50px;
+	margin: 15%;
+}
+.button{
+	margin: 20px;
+	margin-left:40%;
+}
+a:link{
+	color:#1a1a1a;
+	text-decoration: none;
+}
+a:visited{
+	color: #00004F;
+}
+a:active{
+	color:#00004F;
 }
 /*.event {
     border-radius:4px;
