@@ -24,7 +24,7 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E3E3E3;
+    background-color:white;
     font-family: paralucent-text,sans-serif;
 	font-weight: 400;
 	font-style: normal;
@@ -70,14 +70,15 @@ h1 {
     overflow:visible;
     padding-top:30px;
     text-align:center;
-	
-	
+    text-transform: uppercase; 	
 }
+
 .topics{
 	width: 100%;
 	position: fixed;
 	top:100px;
 }
+
 td{
   	padding: 12px;
  	text-align: left;
@@ -92,6 +93,7 @@ td{
 	font-size: 21px;
 	margin: 0px;
 	float: left;
+    height:50px;
 }
 p{
 	display: inline;
@@ -102,19 +104,51 @@ p{
 }
 .navbar{
 	height: 45px;
-	background: #CCCCCC;
+	background: white;
 	display: flex;
 	justify-content: space-between;
 	position: fixed;
 	bottom: 0px;
 	width: 100%;
-	color: #1A1A1A;
+    border: 1px solid grey; 
 }
+
+.active {
+    background:lightgrey;
+}
+
+
+.topicName {
+   width:75%;
+   margin:0;   
+   float:left; 
+}
+
+.editTopicIcon {
+    float:left;
+    width:22%;
+    margin:0;
+}
+
 i{
 	margin-left: 50px;
 	margin-right: 50px;
 	margin-top: 20px;
+    color: black; 
 }
+
+button {
+  height:40px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+
+  font-family: "paralucent-text", sans-serif;
+  font-size:15px;
+}
+
+
 /*.event {
     border-radius:4px;
     -webkit-border-radius:4px;
