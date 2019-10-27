@@ -189,6 +189,20 @@ button {
 	top: 200px;
 	left:35%;
 }
+.done{
+	background: lightgrey;
+	width: 120px;
+	height: 50px;
+	position:fixed;
+	top: 250px;
+	left:35%;
+}
+.logo{
+	height: 100px;
+	position: fixed;
+	top: 400px;
+	left:25%
+}
 #topicInput{
 	position: fixed;
 	top: 130px;
