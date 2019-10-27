@@ -14,7 +14,6 @@
 
 # [START gae_python37_render_template]
 import datetime
-
 from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
@@ -22,6 +21,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def root():
+
+
     # For the sake of example, use static information to inflate the template.
     # This will be replaced with real information in later steps.
     dummy_times = [datetime.datetime(2018, 1, 1, 10, 0, 0),
